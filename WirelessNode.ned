@@ -24,5 +24,9 @@ module WirelessNode extends WirelessHost
     parameters:
     	@class(inet::WirelessNode);
     	@display("i=device/wifilaptop");
+    	double x @unit(m);                 // the x coordinate of the host
+        double y @unit(m);                 // the y coordinate of the host
+    gates:
+		inout gate[];
     	
 }

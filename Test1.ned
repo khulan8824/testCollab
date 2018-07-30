@@ -21,9 +21,9 @@ import inet.visualizer.contract.IIntegratedVisualizer;
 
 network Testing
 {
-    
-    @display("bgb=650,500;bgg=100,1,grey95");
+    @display("bgb=1000,1000;bgg=100,1,grey95");
     @figure[title](type=label; pos=0,-1; anchor=sw; color=darkblue);
+    int numHosts;
     submodules:
         visualizer: <default("IntegratedCanvasVisualizer")> like IIntegratedVisualizer if hasVisualizer() {
             @display("p=580,125");
@@ -34,12 +34,8 @@ network Testing
         radioMedium: <default("UnitDiskRadioMedium")> like IRadioMedium {
             @display("p=580,275");
         }
-        client1: WirelessNode{
+        client[numHosts]: WirelessNode {
             @display("p=345,90");
-        }
-        client2: WirelessNode{
-
-            @display("p=78,76");
         }
 }
 

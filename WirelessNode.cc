@@ -22,23 +22,47 @@ namespace inet {
 
     WirelessNode::WirelessNode(){
 
-        std::cout<<"ITS COMING"<<endl;
+        client = getModuleByPath("client2");
+        std::cout<<client<<endl;
+
     }
 
     void WirelessNode::processStart() {
-
     }
 
     void WirelessNode::initialize(int stage) {
-
+        x = par("x").doubleValue();
+        y = par("y").doubleValue();
+        getDisplayString().setTagArg("p", 0, x);
+        getDisplayString().setTagArg("p", 1, y);
+        senseCloseNeighbors();
     }
 
     void WirelessNode::handleMessage(cMessage* msg) {
-        std::cout<<"MSG"<<endl;
+        std::cout<<getIndex()<<endl;
+        if(msg->isSelfMessage()){
+            // Message arrived.
+            EV << "Message " << msg << " arrived after \n";
+            bubble("ARRIVED, starting new one!");
+            delete msg;
+
+            cMessage *newmsg = new cMessage("new message");
+            int n = gateSize("gate");
+            int k = intuniform(0, n-1);
+        }
+        else{
+            std::cout<<"Coming this side"<<endl;
+        }
+
     }
 
     void WirelessNode::handleMessageWhenUp(cMessage* msg) {
-        std::cout<<"ITS COMING"<<endl;
+
+        std::cout<<"Node is UP and working"<<endl;
+    }
+
+    void WirelessNode::senseCloseNeighbors() {
+
     }
 
 }

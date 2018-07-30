@@ -19,22 +19,28 @@
 #include <omnetpp.h>
 #include "inet/applications/base/ApplicationBase.h"
 #include "inet/networklayer/contract/ipv4/Ipv4Address.h"
-#include "inet/node/inet/WirelessHost.h"
 
 
 namespace inet {
 typedef std::vector<std::set<inet::Ipv4Address>> IPSetList;
-class INET_API WirelessNode: public ApplicationBase , WirelessHost{
+class INET_API WirelessNode: public ApplicationBase{
     public:
         WirelessNode();
         void processStart();
-        std::set<inet::Ipv4Address> getNeighbors(inet::Ipv4Address addr);
-        std::set<inet::Ipv4Address> getNeighbors(inet::Ipv4Address, unsigned);
+        //std::set<inet::Ipv4Address> getNeighbors(inet::Ipv4Address addr);
+        //std::set<inet::Ipv4Address> getNeighbors(inet::Ipv4Address, unsigned);
+    private:
+        std::set<cModule*> neighbours;
+        cModule *client;
+        double x, y; //position of the node
+
     protected:
         virtual void initialize(int stage) override;
         virtual void handleMessage(cMessage *msg) override;
         virtual void handleMessageWhenUp(cMessage *msg) override;
+        virtual void senseCloseNeighbors();
 
     };
+
 }
 #endif
