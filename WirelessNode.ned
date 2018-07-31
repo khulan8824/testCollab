@@ -22,11 +22,11 @@ import inet.node.inet.WirelessHost;
 module WirelessNode extends WirelessHost
 {
     parameters:
+        //int numApps = default(5);
     	@class(inet::WirelessNode);
     	@display("i=device/wifilaptop");
     	double x @unit(m);                 // the x coordinate of the host
-        double y @unit(m);                 // the y coordinate of the host
-    gates:
-		inout gate[];
-    	
+        double y @unit(m);               // the y coordinate of the host
+        
+	    
 }

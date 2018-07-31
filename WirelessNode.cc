@@ -14,54 +14,53 @@
 // 
 
 #include "WirelessNode.h"
+#include "inet/networklayer/configurator/ipv4/Ipv4FlatNetworkConfigurator.h"
 
 
 
 namespace inet {
     Define_Module(WirelessNode);
+    cMessage *event;
 
     WirelessNode::WirelessNode(){
+        event = nullptr;
 
-        client = getModuleByPath("client2");
-        std::cout<<client<<endl;
-
-    }
-
-    void WirelessNode::processStart() {
     }
 
     void WirelessNode::initialize(int stage) {
+        cMessage *msg = new cMessage("event");
         x = par("x").doubleValue();
         y = par("y").doubleValue();
         getDisplayString().setTagArg("p", 0, x);
         getDisplayString().setTagArg("p", 1, y);
-        senseCloseNeighbors();
+        msg->setKind(1);
+        scheduleAt(0, msg);
     }
 
     void WirelessNode::handleMessage(cMessage* msg) {
-        std::cout<<getIndex()<<endl;
-        if(msg->isSelfMessage()){
-            // Message arrived.
-            EV << "Message " << msg << " arrived after \n";
-            bubble("ARRIVED, starting new one!");
-            delete msg;
-
-            cMessage *newmsg = new cMessage("new message");
-            int n = gateSize("gate");
-            int k = intuniform(0, n-1);
-        }
-        else{
-            std::cout<<"Coming this side"<<endl;
-        }
-
+           if(msg->isSelfMessage()){
+                   if(msg->getKind() == 1){
+                    EV << "Message " << msg << " arrived after \n";
+                    cMessage *newmsg = new cMessage("new message");
+                    for(int i=0; i<3; i++){
+                        cModule *c6 = getParentModule()->getSubmodule("client", i);
+                        sendDirect(newmsg->dup(), c6->gate("radioIn", 0));
+                    }
+                    delete newmsg;
+               }
+            }
+            else{
+                EV <<"COMING at this side";
+                delete msg;
+            }
     }
 
     void WirelessNode::handleMessageWhenUp(cMessage* msg) {
-
         std::cout<<"Node is UP and working"<<endl;
     }
 
     void WirelessNode::senseCloseNeighbors() {
+
 
     }
 

@@ -23,16 +23,17 @@ network Testing
 {
     @display("bgb=1000,1000;bgg=100,1,grey95");
     @figure[title](type=label; pos=0,-1; anchor=sw; color=darkblue);
-    int numHosts;
+    
+    	int numHosts =3;
     submodules:
         visualizer: <default("IntegratedCanvasVisualizer")> like IIntegratedVisualizer if hasVisualizer() {
-            @display("p=580,125");
+            @display("p=925.688,226.90399");
         }
         configurator: Ipv4NetworkConfigurator {
-            @display("p=580,200");
+            @display("p=925.688,82.327995");
         }
         radioMedium: <default("UnitDiskRadioMedium")> like IRadioMedium {
-            @display("p=580,275");
+            @display("p=925.688,367.464");
         }
         client[numHosts]: WirelessNode {
             @display("p=345,90");

@@ -21,6 +21,7 @@
 #include "inet/networklayer/contract/ipv4/Ipv4Address.h"
 
 
+
 namespace inet {
 typedef std::vector<std::set<inet::Ipv4Address>> IPSetList;
 class INET_API WirelessNode: public ApplicationBase{
