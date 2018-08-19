@@ -18,28 +18,60 @@
 
 #include <omnetpp.h>
 #include "inet/applications/base/ApplicationBase.h"
-#include "inet/networklayer/contract/ipv4/Ipv4Address.h"
+//#include "inet/networklayer/contract/ipv4/Ipv4Address.h"
 
 
 
 namespace inet {
-typedef std::vector<std::set<inet::Ipv4Address>> IPSetList;
 class INET_API WirelessNode: public ApplicationBase{
     public:
         WirelessNode();
+        ~WirelessNode();
         void processStart();
-        //std::set<inet::Ipv4Address> getNeighbors(inet::Ipv4Address addr);
-        //std::set<inet::Ipv4Address> getNeighbors(inet::Ipv4Address, unsigned);
     private:
         std::set<cModule*> neighbours;
         cModule *client;
         double x, y; //position of the node
+        int choice1, choice2;
+        enum { IDLE = 0, TRANSMIT = 1, MEASURE=2 } state;
+        simsignal_t stateSignal;
+        simtime_t radioDelay;
+        const double propagationSpeed = 299792458.0;
+
+        int pkCounter;
+        double txRate;
+        cPar *iaTime;
+        cPar *pkLenBits;
+
+        int numServers;
+
+        cMessage *endTxEvent;
+
+        // animation parameters
+        const double ringMaxRadius = 2000; // in m
+        const double circlesMaxRadius = 1000; // in m
+        double idleAnimationSpeed;
+        double transmissionEdgeAnimationSpeed;
+        double midtransmissionAnimationSpeed;
+
+        // figures and animation state
+        cPacket *lastPacket = nullptr; // a copy of the last sent message, needed for animation
+        mutable cRingFigure *transmissionRing = nullptr; // shows the last packet
+        mutable std::vector<cOvalFigure *> transmissionCircles; // ripples inside the packet ring
+
 
     protected:
         virtual void initialize(int stage) override;
         virtual void handleMessage(cMessage *msg) override;
+
+        virtual void refreshDisplay() const override;
         virtual void handleMessageWhenUp(cMessage *msg) override;
-        virtual void senseCloseNeighbors();
+        void senseCloseNeighbors();
+        void sendCloseNeighbors(cPacket *packet);
+
+        bool generateRandom(int range);
+
+        simtime_t getNextTransmissionTime();
 
     };
 

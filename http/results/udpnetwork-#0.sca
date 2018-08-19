@@ -1,0 +1,980 @@
+version 2
+run udpnetwork-0-20180801-14:00:57-17821
+attr configname udpnetwork
+attr datetime 20180801-14:00:57
+attr experiment udpnetwork
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network UdpNetwok
+attr processid 17821
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.host*.mobility.constraintAreaMinZ 0m
+param *.host*.mobility.constraintAreaMinX 0m
+param *.host*.mobility.constraintAreaMinY 0m
+param *.host*.mobility.constraintAreaMaxX 1000m
+param *.host*.mobility.constraintAreaMaxY 1000m
+param *.host*.mobility.constraintAreaMaxZ 0m
+param *.hostA.numApps 1
+param *.hostA.app[0].typename "\"CustomPingApp\""
+param *.hostA.app[0].destAddr "\"hostB\""
+param *.hostA.app[0].startTime 0s
+param *.host*.wlan[*].radio.antenna.typename "\"DipoleAntenna\""
+param *.host*.wlan[*].radio.antenna.length 20cm
+param **.httpController.config "xmldoc(\"controller_cfg.xml\",\"//controller-profile[@id='uniform']\")"
+param **.httpController.events "\"\""
+param **.httpController.eventsSection "\"\""
+param **.app[0].linkSpeed 10Mbps
+param **.app[0].httpProtocol 11
+param **.cli*.numApps 1
+param **.cli*.app[0].typename "\"HttpBrowserDirect\""
+param **.cli*.app[0].logFile "\"\""
+param **.cli*.app[0].config "xmldoc(\"browser_cfg.xml\",\"//user-profile[@id='normal']\")"
+param **.cli*.app[0].activationTime 0s
+param **.srv*.numApps 1
+param **.srv*.app[0].typename "\"CustomHttpServerDirect\""
+param **.srv*.app[0].hostName "\"www.single.org\""
+param **.srv*.app[0].port 80
+param **.srv*.app[0].logFile "\"\""
+param **.srv*.app[0].config "xmldoc(\"server_cfg.xml\",\"//server-profile[@id='normal']\")"
+param **.srv*.app[0].activationTime 0s
+
+scalar UdpNetwok.radioMedium.propagation "Arrival computation count" 240
+scalar UdpNetwok.radioMedium "transmission count" 240
+scalar UdpNetwok.radioMedium "signal send count" 240
+scalar UdpNetwok.radioMedium "reception computation count" 240
+scalar UdpNetwok.radioMedium "interference computation count" 960
+scalar UdpNetwok.radioMedium "reception decision computation count" 239
+scalar UdpNetwok.radioMedium "listening decision computation count" 481
+scalar UdpNetwok.radioMedium "reception cache hit" 85.680190930788
+attr unit %
+scalar UdpNetwok.radioMedium "interference cache hit" 66.666666666667
+attr unit %
+scalar UdpNetwok.radioMedium "noise cache hit" 0
+attr unit %
+scalar UdpNetwok.radioMedium "snir cache hit" 50
+attr unit %
+scalar UdpNetwok.radioMedium "reception decision cache hit" 50
+attr unit %
+scalar UdpNetwok.radioMedium "reception result cache hit" 0
+attr unit %
+scalar UdpNetwok.hostA.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar UdpNetwok.hostA.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar UdpNetwok.hostA.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar UdpNetwok.hostA.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar UdpNetwok.hostA.wlan[0].mac rcvdPkFromLl:count 119
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar UdpNetwok.hostA.wlan[0].mac rcvdPkFromLl:sum(packetBytes) 7970
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar UdpNetwok.hostA.wlan[0].mac sentDownPk:count 121
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar UdpNetwok.hostA.wlan[0].mac sentDownPk:sum(packetBytes) 8104
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar UdpNetwok.hostA.wlan[0].mac rcvdPkFromHl:count 61
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar UdpNetwok.hostA.wlan[0].mac rcvdPkFromHl:sum(packetBytes) 5556
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar UdpNetwok.hostA.wlan[0].mac passedUpPk:count 60
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar UdpNetwok.hostA.wlan[0].mac passedUpPk:sum(packetBytes) 5464
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar UdpNetwok.hostA.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar UdpNetwok.hostA.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar UdpNetwok.hostA.wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar UdpNetwok.hostA.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar UdpNetwok.hostA.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, count"
+scalar UdpNetwok.hostA.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, sum(packetBytes)"
+scalar UdpNetwok.hostA.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, count"
+scalar UdpNetwok.hostA.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, sum(packetBytes)"
+scalar UdpNetwok.hostA.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+statistic UdpNetwok.hostA.wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar UdpNetwok.hostA.wlan[0].radio radioMode:count 245
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar UdpNetwok.hostA.wlan[0].radio receptionState:count 481
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar UdpNetwok.hostA.wlan[0].radio transmissionState:count 484
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic UdpNetwok.hostA.wlan[0].radio minSnir:histogram
+field count 119
+field mean 19565.775521039
+field stddev 0
+field min 19565.775521039
+field max 19565.775521039
+field sum 2328327.2870036
+field sqrsum 45555529037.021
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	19565.26	0
+bin	19565.28	0
+bin	19565.3	0
+bin	19565.32	0
+bin	19565.34	0
+bin	19565.36	0
+bin	19565.38	0
+bin	19565.4	0
+bin	19565.42	0
+bin	19565.44	0
+bin	19565.46	0
+bin	19565.48	0
+bin	19565.5	0
+bin	19565.52	0
+bin	19565.54	0
+bin	19565.56	0
+bin	19565.58	0
+bin	19565.6	0
+bin	19565.62	0
+bin	19565.64	0
+bin	19565.66	0
+bin	19565.68	0
+bin	19565.7	0
+bin	19565.72	0
+bin	19565.74	0
+bin	19565.76	119
+bin	19565.78	0
+bin	19565.8	0
+bin	19565.82	0
+bin	19565.84	0
+bin	19565.86	0
+bin	19565.88	0
+bin	19565.9	0
+bin	19565.92	0
+bin	19565.94	0
+bin	19565.96	0
+bin	19565.98	0
+bin	19566	0
+bin	19566.02	0
+bin	19566.04	0
+bin	19566.06	0
+bin	19566.08	0
+bin	19566.1	0
+bin	19566.12	0
+bin	19566.14	0
+bin	19566.16	0
+bin	19566.18	0
+bin	19566.2	0
+bin	19566.22	0
+bin	19566.24	0
+bin	19566.26	0
+bin	19566.28	0
+statistic UdpNetwok.hostA.wlan[0].radio packetErrorRate:histogram
+field count 119
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	119
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic UdpNetwok.hostA.wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic UdpNetwok.hostA.wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar UdpNetwok.hostA.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar UdpNetwok.hostA.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar UdpNetwok.hostA.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar UdpNetwok.hostA.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar UdpNetwok.hostA.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar UdpNetwok.hostA.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar UdpNetwok.hostA.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar UdpNetwok.hostA.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar UdpNetwok.hostA.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar UdpNetwok.hostA.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar UdpNetwok.hostA.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar UdpNetwok.hostA.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar UdpNetwok.hostA.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar UdpNetwok.hostA.ipv4.arp arpResolutionCompleted:count 1
+attr title "ARP completed resolutions, count"
+scalar UdpNetwok.hostA.ipv4.arp arpResolutionInitiated:count 1
+attr title "ARP initiated resolutions, count"
+scalar UdpNetwok.hostA.ipv4.arp arpReplySent:count 0
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar UdpNetwok.hostA.ipv4.arp arpReplySent:sum(packetBytes) 0
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar UdpNetwok.hostA.ipv4.arp arpRequestSent:count 1
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar UdpNetwok.hostA.ipv4.arp arpRequestSent:sum(packetBytes) 28
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar UdpNetwok.hostA.udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar UdpNetwok.hostA.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar UdpNetwok.hostA.udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar UdpNetwok.hostA.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar UdpNetwok.hostA.udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar UdpNetwok.hostA.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar UdpNetwok.hostA.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar UdpNetwok.hostA.app[0] "Pings sent" 60
+scalar UdpNetwok.hostA.app[0] "ping loss rate (%)" 1.6666666666667
+scalar UdpNetwok.hostA.app[0] "ping out-of-order rate (%)" 0
+scalar UdpNetwok.hostA.app[0] pingRxSeq:count 59
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar UdpNetwok.hostA.app[0] pingTxSeq:count 60
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar UdpNetwok.hostA.app[0] numOutOfOrderArrivals:last -nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar UdpNetwok.hostA.app[0] numLost:last -nan
+attr interpolationmode none
+attr title "pings lost, last"
+statistic UdpNetwok.hostA.app[0] rtt:histogram
+field count 59
+field mean 0.00051830578847458
+field stddev 0.00020101387739454
+field min 0.000235000692
+field max 0.001290001384
+field sum 0.03058004152
+field sqrsum 1.819339410811e-05
+attr interpolationmode none
+attr title "ping round-trip time, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	2e-05	0
+bin	4e-05	0
+bin	6e-05	0
+bin	8e-05	0
+bin	0.0001	0
+bin	0.00012	0
+bin	0.00014	0
+bin	0.00016	0
+bin	0.00018	0
+bin	0.0002	0
+bin	0.00022	4
+bin	0.00024	3
+bin	0.00026	0
+bin	0.00028	2
+bin	0.0003	2
+bin	0.00032	2
+bin	0.00034	2
+bin	0.00036	3
+bin	0.00038	2
+bin	0.0004	0
+bin	0.00042	3
+bin	0.00044	2
+bin	0.00046	3
+bin	0.00048	0
+bin	0.0005	2
+bin	0.00052	3
+bin	0.00054	2
+bin	0.00056	3
+bin	0.00058	3
+bin	0.0006	1
+bin	0.00062	4
+bin	0.00064	1
+bin	0.00066	0
+bin	0.00068	2
+bin	0.0007	1
+bin	0.00072	3
+bin	0.00074	1
+bin	0.00076	0
+bin	0.00078	1
+bin	0.0008	1
+bin	0.00082	1
+bin	0.00084	1
+bin	0.00086	0
+bin	0.00088	0
+bin	0.0009	0
+bin	0.00092	0
+bin	0.00094	0
+bin	0.00096	0
+bin	0.00098	0
+bin	0.001	0
+bin	0.00102	0
+bin	0.00104	0
+bin	0.00106	0
+bin	0.00108	0
+bin	0.0011	0
+bin	0.00112	0
+bin	0.00114	0
+bin	0.00116	0
+bin	0.00118	0
+bin	0.0012	0
+bin	0.00122	0
+bin	0.00124	0
+bin	0.00126	0
+bin	0.00128	1
+bin	0.0013	0
+bin	0.00132	0
+bin	0.00134	0
+bin	0.00136	0
+bin	0.00138	0
+bin	0.0014	0
+bin	0.00142	0
+bin	0.00144	0
+bin	0.00146	0
+bin	0.00148	0
+bin	0.0015	0
+bin	0.00152	0
+bin	0.00154	0
+bin	0.00156	0
+scalar UdpNetwok.hostB.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar UdpNetwok.hostB.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar UdpNetwok.hostB.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar UdpNetwok.hostB.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar UdpNetwok.hostB.wlan[0].mac rcvdPkFromLl:count 120
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar UdpNetwok.hostB.wlan[0].mac rcvdPkFromLl:sum(packetBytes) 7984
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar UdpNetwok.hostB.wlan[0].mac sentDownPk:count 119
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar UdpNetwok.hostB.wlan[0].mac sentDownPk:sum(packetBytes) 7970
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar UdpNetwok.hostB.wlan[0].mac rcvdPkFromHl:count 60
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar UdpNetwok.hostB.wlan[0].mac rcvdPkFromHl:sum(packetBytes) 5464
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar UdpNetwok.hostB.wlan[0].mac passedUpPk:count 60
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar UdpNetwok.hostB.wlan[0].mac passedUpPk:sum(packetBytes) 5464
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar UdpNetwok.hostB.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar UdpNetwok.hostB.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar UdpNetwok.hostB.wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar UdpNetwok.hostB.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar UdpNetwok.hostB.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, count"
+scalar UdpNetwok.hostB.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, sum(packetBytes)"
+scalar UdpNetwok.hostB.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, count"
+scalar UdpNetwok.hostB.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, sum(packetBytes)"
+scalar UdpNetwok.hostB.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+statistic UdpNetwok.hostB.wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar UdpNetwok.hostB.wlan[0].radio radioMode:count 241
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar UdpNetwok.hostB.wlan[0].radio receptionState:count 480
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar UdpNetwok.hostB.wlan[0].radio transmissionState:count 476
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic UdpNetwok.hostB.wlan[0].radio minSnir:histogram
+field count 120
+field mean 19565.775521039
+field stddev 0
+field min 19565.775521039
+field max 19565.775521039
+field sum 2347893.0625246
+field sqrsum 45938348608.761
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	19565.26	0
+bin	19565.28	0
+bin	19565.3	0
+bin	19565.32	0
+bin	19565.34	0
+bin	19565.36	0
+bin	19565.38	0
+bin	19565.4	0
+bin	19565.42	0
+bin	19565.44	0
+bin	19565.46	0
+bin	19565.48	0
+bin	19565.5	0
+bin	19565.52	0
+bin	19565.54	0
+bin	19565.56	0
+bin	19565.58	0
+bin	19565.6	0
+bin	19565.62	0
+bin	19565.64	0
+bin	19565.66	0
+bin	19565.68	0
+bin	19565.7	0
+bin	19565.72	0
+bin	19565.74	0
+bin	19565.76	120
+bin	19565.78	0
+bin	19565.8	0
+bin	19565.82	0
+bin	19565.84	0
+bin	19565.86	0
+bin	19565.88	0
+bin	19565.9	0
+bin	19565.92	0
+bin	19565.94	0
+bin	19565.96	0
+bin	19565.98	0
+bin	19566	0
+bin	19566.02	0
+bin	19566.04	0
+bin	19566.06	0
+bin	19566.08	0
+bin	19566.1	0
+bin	19566.12	0
+bin	19566.14	0
+bin	19566.16	0
+bin	19566.18	0
+bin	19566.2	0
+bin	19566.22	0
+bin	19566.24	0
+bin	19566.26	0
+bin	19566.28	0
+statistic UdpNetwok.hostB.wlan[0].radio packetErrorRate:histogram
+field count 120
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	120
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic UdpNetwok.hostB.wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic UdpNetwok.hostB.wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar UdpNetwok.hostB.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar UdpNetwok.hostB.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar UdpNetwok.hostB.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar UdpNetwok.hostB.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar UdpNetwok.hostB.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar UdpNetwok.hostB.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar UdpNetwok.hostB.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar UdpNetwok.hostB.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar UdpNetwok.hostB.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar UdpNetwok.hostB.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar UdpNetwok.hostB.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar UdpNetwok.hostB.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar UdpNetwok.hostB.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar UdpNetwok.hostB.ipv4.arp arpResolutionCompleted:count 1
+attr title "ARP completed resolutions, count"
+scalar UdpNetwok.hostB.ipv4.arp arpResolutionInitiated:count 0
+attr title "ARP initiated resolutions, count"
+scalar UdpNetwok.hostB.ipv4.arp arpReplySent:count 1
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar UdpNetwok.hostB.ipv4.arp arpReplySent:sum(packetBytes) 28
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar UdpNetwok.hostB.ipv4.arp arpRequestSent:count 0
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar UdpNetwok.hostB.ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar UdpNetwok.hostB.udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar UdpNetwok.hostB.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar UdpNetwok.hostB.udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar UdpNetwok.hostB.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar UdpNetwok.hostB.udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar UdpNetwok.hostB.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar UdpNetwok.hostB.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+

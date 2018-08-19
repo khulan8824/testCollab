@@ -1,0 +1,45 @@
+file 2046 1534239973                                            
+version 2
+run General-0-20180814-11:43:19-31351
+attr configname General
+attr datetime 20180814-11:43:19
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Testing
+attr processid 31351
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param Testing.numHosts 3
+param Testing.numServers 6
+param Testing.slotTime 0
+param Testing.txRate 9.6kbps
+param Testing.client[*].pkLenBits 952b
+param **.x "uniform(0m, 1000m)"
+param **.y "uniform(0m, 1000m)"
+param **.animationHoldTimeOnCollision 0s
+param **.idleAnimationSpeed 1
+param **.transmissionEdgeAnimationSpeed 1e-6
+param **.midTransmissionAnimationSpeed 1e-1
+
+vector 0 Testing.client[0] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr source state
+attr title "Radio state, vector"
+vector 1 Testing.client[1] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr source state
+attr title "Radio state, vector"
+vector 2 Testing.client[2] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr source state
+attr title "Radio state, vector"
+0	1107 375 0 95 0 99.297500767064 26 0 1 3 3
+1	1482 281 0 79 0 70.19833537865 22 0 1 2 2
+2	1763 282 0 87 0 74.198334919511 22 0 1 2 2
+

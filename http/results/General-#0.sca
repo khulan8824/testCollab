@@ -1,0 +1,75 @@
+version 2
+run General-0-20180801-11:54:31-14999
+attr configname General
+attr datetime 20180801-11:54:31
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network HttpDirectPair
+attr processid 14999
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.httpController.config "xmldoc(\"controller_cfg.xml\",\"//controller-profile[@id='uniform']\")"
+param **.httpController.events "\"\""
+param **.httpController.eventsSection "\"\""
+param **.app[0].linkSpeed 10Mbps
+param **.app[0].httpProtocol 11
+param **.cli*.numApps 1
+param **.cli*.app[0].typename "\"HttpBrowserDirect\""
+param **.cli*.app[0].logFile "\"\""
+param **.cli*.app[0].config "xmldoc(\"browser_cfg.xml\",\"//user-profile[@id='normal']\")"
+param **.cli*.app[0].activationTime 0s
+param **.srv*.numApps 1
+param **.srv*.app[0].typename "\"CustomHttpServerDirect\""
+param **.srv*.app[0].hostName "\"www.single.org\""
+param **.srv*.app[0].port 80
+param **.srv*.app[0].logFile "\"\""
+param **.srv*.app[0].config "xmldoc(\"server_cfg.xml\",\"//server-profile[@id='normal']\")"
+param **.srv*.app[0].activationTime 0s
+
+scalar HttpDirectPair.srv1.app[0] HTML.served 8
+scalar HttpDirectPair.srv1.app[0] images.served 0
+scalar HttpDirectPair.srv1.app[0] text.served 0
+scalar HttpDirectPair.srv1.app[0] bad.requests 0
+scalar HttpDirectPair.srv2.app[0] HTML.served 0
+scalar HttpDirectPair.srv2.app[0] images.served 24
+scalar HttpDirectPair.srv2.app[0] text.served 37
+scalar HttpDirectPair.srv2.app[0] bad.requests 0
+scalar HttpDirectPair.cli1.app[0] session.count 1
+scalar HttpDirectPair.cli1.app[0] html.requested 2
+scalar HttpDirectPair.cli1.app[0] html.received 2
+scalar HttpDirectPair.cli1.app[0] html.errors 0
+scalar HttpDirectPair.cli1.app[0] html.image.requested 9
+scalar HttpDirectPair.cli1.app[0] html.image.received 9
+scalar HttpDirectPair.cli1.app[0] html.text.requested 14
+scalar HttpDirectPair.cli1.app[0] html.text.received 14
+scalar HttpDirectPair.cli2.app[0] session.count 1
+scalar HttpDirectPair.cli2.app[0] html.requested 2
+scalar HttpDirectPair.cli2.app[0] html.received 2
+scalar HttpDirectPair.cli2.app[0] html.errors 0
+scalar HttpDirectPair.cli2.app[0] html.image.requested 12
+scalar HttpDirectPair.cli2.app[0] html.image.received 12
+scalar HttpDirectPair.cli2.app[0] html.text.requested 8
+scalar HttpDirectPair.cli2.app[0] html.text.received 8
+scalar HttpDirectPair.cli3.app[0] session.count 1
+scalar HttpDirectPair.cli3.app[0] html.requested 2
+scalar HttpDirectPair.cli3.app[0] html.received 2
+scalar HttpDirectPair.cli3.app[0] html.errors 0
+scalar HttpDirectPair.cli3.app[0] html.image.requested 1
+scalar HttpDirectPair.cli3.app[0] html.image.received 1
+scalar HttpDirectPair.cli3.app[0] html.text.requested 5
+scalar HttpDirectPair.cli3.app[0] html.text.received 5
+scalar HttpDirectPair.cli4.app[0] session.count 1
+scalar HttpDirectPair.cli4.app[0] html.requested 2
+scalar HttpDirectPair.cli4.app[0] html.received 2
+scalar HttpDirectPair.cli4.app[0] html.errors 0
+scalar HttpDirectPair.cli4.app[0] html.image.requested 2
+scalar HttpDirectPair.cli4.app[0] html.image.received 2
+scalar HttpDirectPair.cli4.app[0] html.text.requested 10
+scalar HttpDirectPair.cli4.app[0] html.text.received 10
+

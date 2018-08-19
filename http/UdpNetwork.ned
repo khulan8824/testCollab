@@ -13,47 +13,38 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package testCollab;
+package testCollab.http;
+
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
-import inet.node.inet.INetworkNode;
-import inet.physicallayer.contract.packetlevel.IRadioMedium;
+import inet.node.inet.AdhocHost;
 import inet.physicallayer.ieee80211.packetlevel.Ieee80211ScalarRadioMedium;
 import inet.visualizer.contract.IIntegratedVisualizer;
-import inet.node.wireless.AccessPoint;
-import inet.node.inet.WirelessHost;
 
-network Testing
+network UdpNetwok
 {
     parameters:
-    	double txRate @unit(bps);  // transmission rate
-    	double slotTime @unit(ms);  // zero means no slots (pure Aloha)    
-    	int numHosts @int;
-    	int numServers @int;
-        @display("bgb=2000,2000;bgg=100,1,grey95");
-        @figure[title](type=label; pos=0,-1; anchor=sw; color=darkblue);
+	    @display("bgb=1000,1000");
+    	@statistic[receptionPower](source="receptionMinSignalPower(radioMedium.signalArrivalStarted)"; record=vector);
     submodules:
         visualizer: <default("IntegratedCanvasVisualizer")> like IIntegratedVisualizer if hasVisualizer() {
-            @display("p=925.688,226.90399");
+            parameters:
+                @display("p=100,300;is=s");
         }
         configurator: Ipv4NetworkConfigurator {
             parameters:
-                @display("p=100,250");
+                @display("p=100,100;is=s");
         }
         radioMedium: Ieee80211ScalarRadioMedium {
             parameters:
-                @display("p=100,350");
+                @display("p=100,200;is=s");
         }
-        client[numHosts]: WirelessNode {
-            @display("p=345,90");
-            txRate = txRate;
+        hostA: AdhocHost {
+            parameters:
+                @display("p=250,200");
+            
         }
-        server[numServers]: Gateway{
-            @display("p=205,69");
+        hostB: AdhocHost {
+            parameters:
+                @display("p=400,200");
         }
-      // connections:
-        //   for i=0..numHosts-1{
-          //     server.out[i] --> client[i].in;
-           //}         
 }
-
-

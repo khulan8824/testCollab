@@ -19,14 +19,30 @@ import inet.node.inet.WirelessHost;
 //
 // TODO auto-generated module
 //
-module WirelessNode extends WirelessHost
+module WirelessNode
 {
     parameters:
         //int numApps = default(5);
     	@class(inet::WirelessNode);
     	@display("i=device/wifilaptop");
+    	@signal[state](type="long");
+        @statistic[radioState](source="state";title="Radio state";enum="IDLE=0,TRANSMIT=1";record=vector);
+        
+       
     	double x @unit(m);                 // the x coordinate of the host
         double y @unit(m);               // the y coordinate of the host
+        double txRate @unit(bps);          // transmission rate
+        volatile int pkLenBits @unit(b);   // packet length in bits
+        volatile double iaTime @unit(s);   // packet interarrival time
+        volatile int numServers @int;
         
+        double idleAnimationSpeed;         // used when there is no packet being transmitted
+        double transmissionEdgeAnimationSpeed; // used when the propagation of a first or last bit is visible
+        double midTransmissionAnimationSpeed; // used during transmission
+        bool controlAnimationSpeed = default(true);
+    gates:
+        input in @directIn;
+        //output out @directOut;
+    connections allowunconnected:
 	    
 }

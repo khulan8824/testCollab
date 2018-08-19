@@ -1,0 +1,54 @@
+version 2
+run General-0-20180814-11:43:19-31351
+attr configname General
+attr datetime 20180814-11:43:19
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Testing
+attr processid 31351
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param Testing.numHosts 3
+param Testing.numServers 6
+param Testing.slotTime 0
+param Testing.txRate 9.6kbps
+param Testing.client[*].pkLenBits 952b
+param **.x "uniform(0m, 1000m)"
+param **.y "uniform(0m, 1000m)"
+param **.animationHoldTimeOnCollision 0s
+param **.idleAnimationSpeed 1
+param **.transmissionEdgeAnimationSpeed 1e-6
+param **.midTransmissionAnimationSpeed 1e-1
+
+scalar Testing.radioMedium.propagation "Arrival computation count" 0
+scalar Testing.radioMedium "transmission count" 0
+scalar Testing.radioMedium "signal send count" 0
+scalar Testing.radioMedium "reception computation count" 0
+scalar Testing.radioMedium "interference computation count" 0
+scalar Testing.radioMedium "reception decision computation count" 0
+scalar Testing.radioMedium "listening decision computation count" 0
+scalar Testing.radioMedium "reception cache hit" -nan
+attr unit %
+scalar Testing.radioMedium "interference cache hit" -nan
+attr unit %
+scalar Testing.radioMedium "noise cache hit" -nan
+attr unit %
+scalar Testing.radioMedium "snir cache hit" -nan
+attr unit %
+scalar Testing.radioMedium "reception decision cache hit" -nan
+attr unit %
+scalar Testing.radioMedium "reception result cache hit" -nan
+attr unit %
+scalar Testing.server[0] duration 100
+scalar Testing.server[1] duration 100
+scalar Testing.server[2] duration 100
+scalar Testing.server[3] duration 100
+scalar Testing.server[4] duration 100
+scalar Testing.server[5] duration 100
+

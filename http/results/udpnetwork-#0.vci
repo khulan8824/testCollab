@@ -1,0 +1,202 @@
+file 277077 1533125662                                          
+version 2
+run udpnetwork-0-20180801-14:00:57-17821
+attr configname udpnetwork
+attr datetime 20180801-14:00:57
+attr experiment udpnetwork
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network UdpNetwok
+attr processid 17821
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.host*.mobility.constraintAreaMinZ 0m
+param *.host*.mobility.constraintAreaMinX 0m
+param *.host*.mobility.constraintAreaMinY 0m
+param *.host*.mobility.constraintAreaMaxX 1000m
+param *.host*.mobility.constraintAreaMaxY 1000m
+param *.host*.mobility.constraintAreaMaxZ 0m
+param *.hostA.numApps 1
+param *.hostA.app[0].typename "\"CustomPingApp\""
+param *.hostA.app[0].destAddr "\"hostB\""
+param *.hostA.app[0].startTime 0s
+param *.host*.wlan[*].radio.antenna.typename "\"DipoleAntenna\""
+param *.host*.wlan[*].radio.antenna.length 20cm
+param **.httpController.config "xmldoc(\"controller_cfg.xml\",\"//controller-profile[@id='uniform']\")"
+param **.httpController.events "\"\""
+param **.httpController.eventsSection "\"\""
+param **.app[0].linkSpeed 10Mbps
+param **.app[0].httpProtocol 11
+param **.cli*.numApps 1
+param **.cli*.app[0].typename "\"HttpBrowserDirect\""
+param **.cli*.app[0].logFile "\"\""
+param **.cli*.app[0].config "xmldoc(\"browser_cfg.xml\",\"//user-profile[@id='normal']\")"
+param **.cli*.app[0].activationTime 0s
+param **.srv*.numApps 1
+param **.srv*.app[0].typename "\"CustomHttpServerDirect\""
+param **.srv*.app[0].hostName "\"www.single.org\""
+param **.srv*.app[0].port 80
+param **.srv*.app[0].logFile "\"\""
+param **.srv*.app[0].config "xmldoc(\"server_cfg.xml\",\"//server-profile[@id='normal']\")"
+param **.srv*.app[0].activationTime 0s
+
+vector 0 UdpNetwok.hostA.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 UdpNetwok.hostB.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 2 UdpNetwok.hostA.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 3 UdpNetwok.hostB.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 4 UdpNetwok.hostA.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 5 UdpNetwok.hostB.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 6 UdpNetwok.hostA.wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 7 UdpNetwok.hostA.wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 8 UdpNetwok.hostA.wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 9 UdpNetwok.hostA.wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 10 UdpNetwok.hostA.wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 11 UdpNetwok.hostB.wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 12 UdpNetwok.hostB.wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 13 UdpNetwok.hostB.wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 14 UdpNetwok.hostB.wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 15 UdpNetwok.hostB.wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 16 UdpNetwok.hostA.app[0] pingTxSeq:vector ETV
+attr interpolationmode none
+attr title "ping tx seq, vector"
+vector 17 UdpNetwok.hostA.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 18 UdpNetwok.hostA.wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 19 UdpNetwok.hostA.wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 20 UdpNetwok.hostA.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 21 UdpNetwok receptionPower:vector ETV
+attr source receptionMinSignalPower(radioMedium.signalArrivalStarted)
+vector 22 UdpNetwok.hostB.wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 23 UdpNetwok.hostB.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 24 UdpNetwok.hostB.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 25 UdpNetwok.hostB.wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 26 UdpNetwok.hostB.wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 27 UdpNetwok.hostB.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 28 UdpNetwok.hostA.wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 29 UdpNetwok.hostA.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 30 UdpNetwok.hostA.app[0] pingRxSeq:vector ETV
+attr interpolationmode none
+attr title "ping rx seq, vector"
+vector 31 UdpNetwok.hostA.app[0] rtt:vector ETV
+attr interpolationmode none
+attr title "ping round-trip time, vector"
+attr unit s
+0	7230 4755 0 3357 0 59.00007 245 0 3 607 1577
+1	11985 5856 0 3326 0 58.000554500346 241 0 3 597 1551
+2	17841 8 0 0 0 0 1 0 0 0 0
+3	17849 8 0 0 0 0 1 0 0 0 0
+4	17857 10571 0 3357 0 59.00007 481 0 3 598 1312
+5	28428 11739 0 3355 0 59.000000500346 480 0 3 603 1329
+6	40167 18990 0 3353 0 59 968 0 2 250 498
+7	59157 16130 0 3353 0 59 724 0 0 0 0
+8	75287 16130 0 3353 0 59 724 0 0 0 0
+9	91417 16130 0 3353 0 59 724 0 0 0 0
+10	107547 16854 0 3353 0 59 724 0 0 0 0
+11	124401 24440 0 3355 0 59.000000500346 960 0 2 594 1070
+12	148841 18324 0 3355 0 59.000000500346 720 0 0 0 0
+13	167165 18324 0 3355 0 59.000000500346 720 0 0 0 0
+14	185489 18324 0 3355 0 59.000000500346 720 0 0 0 0
+15	203813 18324 0 3355 0 59.000000500346 720 0 0 0 0
+16	222137 799 1 3346 0 59 60 0 59 1770 70210
+17	222936 10 3 3 0 0 1 28 28 28 784
+18	222946 834 5 3349 0 59 61 36 92 5556 509136
+19	223780 2490 8 3352 0.00011 59 121 14 120 8104 879856
+20	226270 9947 9 3357 0.00011 59.00007 484 0 2 484 726
+21	236217 10438 11 3355 0.000110500346 59.000000500346 240 1.9565775521039e-10 1.9565775521039e-10 4.6957861250493e-08 9.1876697217521e-18
+22	246655 3236 15 3341 0.000160500346 58.000599501038 120 14 120 7984 865456
+23	249891 1589 15 3303 0.000160500346 58.000070500346 60 36 92 5464 500672
+24	251480 24 17 17 0.000160500346 0.000160500346 1 28 28 28 784
+25	251504 1589 19 3309 0.000160500346 58.000070500346 60 36 92 5464 500672
+26	253093 3213 22 3321 0.000350500346 58.000484500346 119 14 120 7970 865260
+27	256306 12140 23 3326 0.000350500346 58.000554500346 476 0 2 476 714
+28	268446 3213 29 3328 0.000401000692 58.000555000692 119 14 120 7970 865260
+29	271659 1589 29 3328 0.000401000692 58.000555000692 60 36 92 5464 500672
+30	273248 1555 80 3331 0.001290001384 58.000555000692 59 0 58 1711 66729
+31	274803 2273 80 3331 0.001290001384 58.000555000692 59 0.000235000692 0.001290001384 0.03058004152 1.819339410811e-05
+

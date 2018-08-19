@@ -1,0 +1,111 @@
+version 2
+run General-0-20180814-11:43:19-31351
+attr configname General
+attr datetime 20180814-11:43:19
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Testing
+attr processid 31351
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param Testing.numHosts 3
+param Testing.numServers 6
+param Testing.slotTime 0
+param Testing.txRate 9.6kbps
+param Testing.client[*].pkLenBits 952b
+param **.x "uniform(0m, 1000m)"
+param **.y "uniform(0m, 1000m)"
+param **.animationHoldTimeOnCollision 0s
+param **.idleAnimationSpeed 1
+param **.transmissionEdgeAnimationSpeed 1e-6
+param **.midTransmissionAnimationSpeed 1e-1
+
+vector 0 Testing.client[0] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr source state
+attr title "Radio state, vector"
+vector 1 Testing.client[1] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr source state
+attr title "Radio state, vector"
+vector 2 Testing.client[2] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr source state
+attr title "Radio state, vector"
+0	0	0	0
+0	0	0	0
+0	0	0	0
+0	0	0	0
+0	0	0	0
+0	0	0	0
+0	0	0	0
+0	0	0	0
+0	0	0	0
+0	0	0	0
+0	0	0	0
+0	0	0	0
+0	0	0	0
+0	0	0	0
+0	14	33	1
+0	17	33.099166666667	0
+0	19	33.099167096543	0
+0	21	33.099168789609	0
+0	64	66.099166666667	1
+0	67	66.198333333334	0
+0	69	66.198334182046	0
+0	71	66.198335456276	0
+0	88	99.198333333334	1
+0	91	99.297500000001	0
+0	93	99.297500429877	0
+0	95	99.297500767064	0
+1	0	0	0
+1	0	0	0
+1	0	0	0
+1	0	0	0
+1	0	0	0
+1	0	0	0
+1	0	0	0
+1	0	0	0
+1	0	0	0
+1	0	0	0
+1	0	0	0
+1	0	0	0
+1	0	0	0
+1	0	0	0
+1	35	35	1
+1	38	35.099166666667	0
+1	40	35.099167886353	0
+1	42	35.099168711983	0
+1	72	70.099166666667	1
+1	75	70.198333333334	0
+1	77	70.19833455302	0
+1	79	70.19833537865	0
+2	0	0	0
+2	0	0	0
+2	0	0	0
+2	0	0	0
+2	0	0	0
+2	0	0	0
+2	0	0	0
+2	0	0	0
+2	0	0	0
+2	0	0	0
+2	0	0	0
+2	0	0	0
+2	0	0	0
+2	0	0	0
+2	56	37	1
+2	59	37.099166666667	0
+2	61	37.099167650623	0
+2	63	37.099168960298	0
+2	80	74.099166666667	1
+2	83	74.198333333334	0
+2	85	74.19833431729	0
+2	87	74.198334919511	0
+
