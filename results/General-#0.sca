@@ -1,14 +1,14 @@
 version 2
-run General-0-20180814-11:43:19-31351
+run General-0-20180820-00:02:56-4278
 attr configname General
-attr datetime 20180814-11:43:19
+attr datetime 20180820-00:02:56
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Testing
-attr processid 31351
+attr processid 4278
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -45,10 +45,10 @@ scalar Testing.radioMedium "reception decision cache hit" -nan
 attr unit %
 scalar Testing.radioMedium "reception result cache hit" -nan
 attr unit %
-scalar Testing.server[0] duration 100
-scalar Testing.server[1] duration 100
-scalar Testing.server[2] duration 100
-scalar Testing.server[3] duration 100
-scalar Testing.server[4] duration 100
-scalar Testing.server[5] duration 100
+scalar Testing.server[0] duration 37.000002428947
+scalar Testing.server[1] duration 37.000002428947
+scalar Testing.server[2] duration 37.000002428947
+scalar Testing.server[3] duration 37.000002428947
+scalar Testing.server[4] duration 37.000002428947
+scalar Testing.server[5] duration 37.000002428947
 
